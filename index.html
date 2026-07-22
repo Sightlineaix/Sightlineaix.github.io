@@ -326,7 +326,108 @@
             line-height: 1.6;
         }
 
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+        }
 
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--bg-surface);
+            backdrop-filter: blur(8px);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pricing-card:hover {
+            background: var(--bg-surface-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 242, 254, 0.05);
+        }
+
+        .pricing-card.popular {
+            border: 1px solid rgba(0, 242, 254, 0.4);
+            box-shadow: 0 10px 40px rgba(0, 242, 254, 0.08);
+        }
+
+        .pricing-card.popular::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 35px;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+
+        .price-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin: 16px 0;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .price-amount span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 24px 0 32px 0;
+            padding: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .price-features li {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-features li svg {
+            color: var(--accent-cyan);
+            flex-shrink: 0;
+        }
 
         /* Footer */
         footer {
@@ -388,6 +489,7 @@
         </a>
         <ul class="nav-links">
             <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
             <li><a href="#" class="btn btn-secondary" style="padding: 8px 18px; font-size: 0.9rem;" id="navCta">Get Started</a></li>
         </ul>
     </div>
@@ -415,12 +517,8 @@
     <section id="features" class="features-section" style="scroll-margin-top: 100px;">
         <div class="section-header">
             <h2>Engineered for Performance</h2>
-            <p>Engineered for out-of-process operation, operating independently of standard software-level limitations.</p>
+            <p>Designed to bypass standard software vulnerabilities and operate completely out-of-process.</p>
         </div>
-    <section id="features" class="features-section" style="scroll-margin-top: 100px;">
-        <div class="section-header">
-            <h2>Many more features to use and try</h2>
-        </div>        
         
         <div class="features-grid">
             <div class="card" id="featCapture">
@@ -428,8 +526,8 @@
                     <!-- Zap Icon -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                 </div>
-                <h3>Video Capture</h3>
-                <p>Captures frames seamlessly using either standard OS screen-grabbing APIs or direct hardware input from PCIe capture cards, reducing latency to under 5ms.</p>
+                <h3>PCIe Video Capture</h3>
+                <p>Loads frames directly from PCIe capture cards. Bypasses standard OS screen-grabbing APIs, dropping capture latency to under 5ms.</p>
             </div>
             
             <div class="card" id="featHardware">
@@ -437,8 +535,8 @@
                     <!-- CPU/Chip Icon -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="15" y2="17"></line></svg>
                 </div>
-                <h3>Makcu Hardware Support</h3>
-                <p>Communicates directly with the Makcu serial microcontroller. Mouse signals are translated into native hardware inputs, so no virtual software drivers needed.</p>
+                <h3>Makcu Hardware Emulation</h3>
+                <p>Communicates directly with the Makcu serial microcontroller. Mouse signals are translated into native hardware inputs at the COM port level, so no virtual software mouse drivers exist on the host OS.</p>
             </div>
             
             <div class="card" id="featTriggerbot">
@@ -447,7 +545,7 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
                 </div>
                 <h3>Automated Target Triggering</h3>
-                <p>Fires input actions automatically when a designated target is detected. Includes trigger delay and custom spatial offsets for precision coordinate mapping.</p>
+                <p>Fires input actions automatically when a designated target is detected under your reticle. Includes humanized trigger delay and custom spatial offsets for precision coordinate mapping.</p>
             </div>
 
             <div class="card" id="featRecoil">
@@ -474,11 +572,71 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                 </div>
                 <h3>Hands-Free Snapshot Training</h3>
-                <p>Records video feed screenshots with automatic YOLO labeling. Enable Snapshot mode, and the AI will compile your training dataset automatically.</p>
+                <p>Records video feed screenshots with automatic YOLO target label bounding boxes. Simply run a pre-recorded stream, enable Snapshot mode, and the AI will compile your training dataset automatically.</p>
             </div>
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section" style="scroll-margin-top: 100px;">
+        <div class="section-header">
+            <h2>Flexible Access Plans</h2>
+            <p>Select the plan that fits your testing and deployment cycle.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Weekly Plan -->
+            <div class="pricing-card" id="priceWeekly">
+                <h3 class="price-title">Weekly Pass</h3>
+                <div class="price-amount">$12<span>/ week</span></div>
+                <ul class="price-features">
+                    <li>
+                        <!-- Check icon -->
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Full hardware pipeline access
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Dual profile configuration
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Snapshot compiler toolkit
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Standard support channel
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-secondary" style="width: 100%;" id="btnBuyWeekly">Get Started</a>
+            </div>
+
+            <!-- Monthly Plan -->
+            <div class="pricing-card popular" id="priceMonthly">
+                <h3 class="price-title">Monthly License</h3>
+                <div class="price-amount">$20<span>/ month</span></div>
+                <ul class="price-features">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Full hardware pipeline access
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Dual profile configuration
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Snapshot compiler toolkit
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Priority support & updates
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width: 100%;" id="btnBuyMonthly">Subscribe Now</a>
+            </div>
+        </div>
+    </section>
 
 </div>
 
