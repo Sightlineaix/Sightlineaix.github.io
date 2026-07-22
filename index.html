@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sightline | Advanced AI Aiming & Computer Vision Assistance</title>
+    <title>Sightline | Advanced AI Object Detection & Computer Vision Control</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Sightline leverages advanced neural networks and hardware-level emulation to provide undetectable, lightning-fast computer vision aiming assistance.">
-    <meta name="keywords" content="AI, Computer Vision, Aim Assist, Hardware Emulation, Makcu, low latency, gaming helper">
+    <meta name="description" content="Sightline leverages advanced neural networks and hardware-level emulation to provide real-time, lightning-fast computer vision object tracking and cursor control assistance.">
+    <meta name="keywords" content="AI, Computer Vision, Object Tracking, Hardware Emulation, Makcu, low latency, control helper">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -375,7 +375,7 @@
 <header class="site-nav">
     <div class="container nav-wrapper">
         <a href="#" class="logo" id="navLogo">
-            <!-- Sleek Reticle / Aim Reticle SVG Icon -->
+            <!-- Sleek Reticle / Target Reticle SVG Icon -->
             <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
                 <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
@@ -402,7 +402,7 @@
         </div>
         <h1 class="hero-title">Undetectable precision,<br>driven by hardware.</h1>
         <p class="hero-desc">
-            Sightline captures real-time gameplay via high-speed PCIe pipelines, processes it with neural network object detection, and delivers instant cursor adjustments directly through hardware-level mouse emulators.
+            Sightline captures real-time high-speed PCIe video pipelines, processes frames using neural network object detection, and delivers instant cursor adjustments directly through hardware-level mouse emulators.
         </p>
         <div class="btn-group">
             <a href="#features" class="btn btn-primary" id="heroBtnPrimary">Explore Features</a>
@@ -425,7 +425,7 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                 </div>
                 <h3>PCIe Video Capture</h3>
-                <p>Loads frames directly from PCIe capture cards. Avoids standard screen-grabbing APIs that anti-cheats scan for, while dropping capture latency to under 5ms.</p>
+                <p>Loads frames directly from PCIe capture cards. Bypasses standard OS screen-grabbing APIs, dropping capture latency to under 5ms.</p>
             </div>
             
             <div class="card" id="featHardware">
@@ -442,8 +442,8 @@
                     <!-- Target Crosshair Icon -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
                 </div>
-                <h3>Auto-Triggerbot</h3>
-                <p>Fires automatically when a target is detected under your crosshair. Includes humanized trigger delay and custom target height offsets so you can aim specifically for the body, neck, or head.</p>
+                <h3>Automated Target Triggering</h3>
+                <p>Fires input actions automatically when a designated target is detected under your reticle. Includes humanized trigger delay and custom spatial offsets for precision coordinate mapping.</p>
             </div>
 
             <div class="card" id="featDamping">
@@ -452,7 +452,7 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
                 </div>
                 <h3>Active Stabilization</h3>
-                <p>Applies real-time active damping parameters and humanized jitter filters to make aiming actions completely smooth and indistinguishable from genuine human tracking inputs.</p>
+                <p>Applies real-time active damping parameters and humanized jitter filters to make cursor movements completely smooth and indistinguishable from genuine human inputs.</p>
             </div>
 
             <div class="card" id="featDoubleProfile">
@@ -461,7 +461,7 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
                 </div>
                 <h3>Dual Profile Mapping</h3>
-                <p>Supports two completely independent hotkey profiles. Allows you to map separate fields of view, mouse speeds, target weights, and height percentages to different game situations dynamically.</p>
+                <p>Supports two completely independent hotkey profiles. Allows you to map separate fields of view, mouse speeds, target weights, and height percentages to different analysis scenarios dynamically.</p>
             </div>
 
             <div class="card" id="featTraining">
@@ -470,7 +470,7 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                 </div>
                 <h3>Hands-Free Snapshot Training</h3>
-                <p>Records gameplay screenshots with automatic YOLO target label bounding boxes. Simply run a gameplay video file, enable Snapshot ON, and the AI will build your training dataset automatically.</p>
+                <p>Records video feed screenshots with automatic YOLO target label bounding boxes. Simply run a pre-recorded stream, enable Snapshot mode, and the AI will compile your training dataset automatically.</p>
             </div>
         </div>
     </section>
@@ -492,7 +492,7 @@
             </svg>
             <span>Sightline</span>
         </a>
-        <p>Advanced out-of-process aiming assistance utility.</p>
+        <p>Advanced out-of-process precision control utility.</p>
         <p class="footer-copyright">&copy; 2026 Sightline. All rights reserved. For educational and research purposes only.</p>
     </div>
 </footer>
