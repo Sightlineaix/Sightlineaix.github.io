@@ -429,6 +429,62 @@
             flex-shrink: 0;
         }
 
+        /* Get Started Section */
+        .get-started-section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            background: var(--bg-surface);
+            backdrop-filter: blur(8px);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .step-card:hover {
+            background: var(--bg-surface-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 242, 254, 0.03);
+        }
+
+        .step-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .step-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         /* Footer */
         footer {
             border-top: 1px solid var(--border-color);
@@ -490,7 +546,7 @@
         <ul class="nav-links">
             <li><a href="#features">Features</a></li>
             <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#" class="btn btn-secondary" style="padding: 8px 18px; font-size: 0.9rem;" id="navCta">Get Started</a></li>
+            <li><a href="#get-started" class="btn btn-secondary" style="padding: 8px 18px; font-size: 0.9rem;" id="navCta">Get Started</a></li>
         </ul>
     </div>
 </header>
@@ -618,6 +674,37 @@
                     </li>
                 </ul>
                 <a href="#" class="btn btn-primary" style="width: 100%;" id="btnBuyMonthly">Subscribe Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section id="get-started" class="get-started-section" style="scroll-margin-top: 100px;">
+        <div class="section-header">
+            <h2>Get Started</h2>
+            <p>Follow these steps to initialize your Sightline configuration.</p>
+        </div>
+
+        <div class="steps-container">
+            <!-- Step 1 -->
+            <div class="step-card" id="step1">
+                <span class="step-number">01</span>
+                <h3>Join Our Discord</h3>
+                <p>Connect with our community and chat directly with one of our team members to receive onboarding details.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card" id="step2">
+                <span class="step-number">02</span>
+                <h3>Subscribe & Choose Plan</h3>
+                <p>Select either the weekly or monthly license tier that best matches your needs and finalize your subscription.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card" id="step3">
+                <span class="step-number">03</span>
+                <h3>Download & Configure</h3>
+                <p>Download the software client and customize the configuration files tailored to your specific hardware layout and use case.</p>
             </div>
         </div>
     </section>
